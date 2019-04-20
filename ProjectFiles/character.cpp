@@ -1,4 +1,4 @@
-#include "character.h"
+#include "../HeaderFiles/character.h"
 
 void character::setname(string name){
     this->name = name;

@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/Users/YoungJeffy/Desktop/MonstaLegends/HeaderFiles"
+            ],
+            "browse":{
+                "path":[
+                    "${workspaceFolder}/**",
+                "/Users/YoungJeffy/Desktop/MonstaLegends/HeaderFiles"
+            
+                ]
+            },
+            "defines": [],
+            "macFrameworkPath": [
+                "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks"
+            ],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}
