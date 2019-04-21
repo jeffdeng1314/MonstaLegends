@@ -4,6 +4,10 @@
 #include <string>
 #include <cstdlib>
 #include <ctime>
+#include <unistd.h>
+#include <limits>
+#include <fstream>
+
 
 // using   std::cout;
 // using   std::cin;
