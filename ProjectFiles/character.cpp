@@ -1,4 +1,5 @@
-#include "../HeaderFiles/character.h"
+// #include "../HeaderFiles/character.h"
+#include "../HeaderFiles/allHeaders.h"
 
 void character::setname(string name){
     this->name = name;
@@ -8,19 +9,19 @@ string character::getname(){
     return name;
 }
 
-void character::setage(int age){
+void character::setage(uint32_t age){
     this->age = age;
 }
 
-int character::getage(){
+uint32_t character::getage(){
     return age;
 }
 
-void character::setmoney(int money){
+void character::setmoney(uint32_t money){
     this->money = money;
 }
 
-int character::getmoney(){
+uint32_t character::getmoney(){
     return money;
 }
 
@@ -29,4 +30,12 @@ void character::setgender(string gender){
 }
 string character::getgender(){
     return gender;
+}
+
+const list<monster> *character:: getmonsters(){
+    return &monsters;
+}
+
+void character::setmonsters(monster x){
+    monsters.push_back(x);
 }

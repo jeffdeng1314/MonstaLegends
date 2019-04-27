@@ -1,4 +1,5 @@
-#include "../HeaderFiles/generalfunctions.h"
+// #include "../HeaderFiles/generalfunctions.h"
+#include "../HeaderFiles/allHeaders.h"
 
 
 int main_menu(){
@@ -24,7 +25,18 @@ int main_menu(){
 
 
 }
-void greetings(string *name, string *gender, int *age){
+
+
+void screen_clear(){
+    #ifdef WINDOWS
+                system("cls");
+    #else
+                system("clear");
+    #endif
+}
+
+void greetings(string *name, string *gender, uint32_t *age){
+    cin.ignore();
     cout<<"Please enter your name: ";
     getline(cin,*name);
     cout<<endl;
@@ -34,7 +46,6 @@ void greetings(string *name, string *gender, int *age){
     cout<<"What is your gender: ";
     cin.ignore();
     getline(cin, *gender);
-    system("clear");
 }
 
 void print_headline(string x){
@@ -42,20 +53,27 @@ void print_headline(string x){
 }
 
 //Binary Serialization
-void load_game(character c1){
+void load_game(character *c1){
+        //Check if the game data file exist for loading saved progress.
+    if (FILE *file = fopen("gamedata.bin", "r")) {
+            fclose(file);
+    } else {
+            cout<<"Gamedata.bin file does not exist!"<<endl;
+            exit(1);
+    }   
     cout<<"Loading progress....."<<endl;
-    usleep(2000);
-
-    ifstream load("game.ros", ios::binary);
-    load.read((char *)&c1, sizeof(c1));
+    sleep(1);
+    ifstream load("gamedata.bin", ios::binary);
+    load.read((char *)c1, sizeof(*c1));
+    cout<<"Done!"<<endl;
 }
 
 //Binary Serialization
-void save_game(character c1){
+void save_game(character *c1){
     cout<<"Saving progress....."<<endl;
-    usleep(2000);
-    ofstream save("game.ros", ios::binary);
-    save.write((char *)&c1, sizeof(c1));
+    sleep(1);
+    ofstream save("gamedata.bin", ios::binary);
+    save.write((char *)c1, sizeof(*c1));
     cout<<"Done!"<<endl;
 }
 
@@ -65,8 +83,9 @@ bool new_or_load_game(){
     cout<<"[2] Load game"<<endl;
     cin>>x;
 
-    if(x == 2)
+    if(x == 2){
         return false;
+    }
     else if(x == 1)
         return true;
     else{

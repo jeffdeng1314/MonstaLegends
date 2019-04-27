@@ -1,4 +1,5 @@
-#include "../HeaderFiles/account.h"
+// #include "../HeaderFiles/account.h"
+#include "../HeaderFiles/allHeaders.h"
 
 int account_menu(){
     int choice;

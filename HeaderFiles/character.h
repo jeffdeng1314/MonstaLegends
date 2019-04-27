@@ -1,31 +1,38 @@
 #pragma once
-#include "header.h"
+// #include "header.h"
+// #include "monsters.h"
+#include "allHeaders.h"
 
 class character{
 
     private:
         string name;
-        int age;
-        int money;
+        uint32_t age;
+        uint32_t money;
         string gender;
+        list<monster> monsters;
     
     public:
         //constructor
-        character(string name, int age, string gender){
+        character(string name, uint32_t age, string gender){
             this->name = name;
             this->age = age;
             money = 0;
             this->gender = gender;
         }
 
+        const list<monster>* getmonsters();
+
+        void setmonsters(monster x);
+
         void setname(string name);
         string getname();
 
-        void setage(int age);
-        int getage();
+        void setage(uint32_t age);
+        uint32_t getage();
 
-        void setmoney(int money);
-        int getmoney();
+        void setmoney(uint32_t money);
+        uint32_t getmoney();
 
         void setgender(string gender);
         string getgender();
