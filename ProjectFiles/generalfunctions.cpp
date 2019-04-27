@@ -18,7 +18,7 @@ int main_menu(){
     else if(cin.fail() || !(choice >= 1 && choice <= 5)){
         cout<<"Invalid input"<<endl;
         cin.clear();
-        cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n' );
+        cin.ignore(100,'\n' );
         return 100;
     }
     else{return 100;}
@@ -55,15 +55,15 @@ void print_headline(string x){
 //Binary Serialization
 void load_game(character *c1){
         //Check if the game data file exist for loading saved progress.
-    if (FILE *file = fopen("gamedata.bin", "r")) {
+    if (FILE *file = fopen("gamedata.ros", "r")) {
             fclose(file);
     } else {
-            cout<<"Gamedata.bin file does not exist!"<<endl;
+            cout<<"Gamedata.ros file does not exist!"<<endl;
             exit(1);
     }   
     cout<<"Loading progress....."<<endl;
     sleep(1);
-    ifstream load("gamedata.bin", ios::binary);
+    ifstream load("gamedata.ros", ios::binary);
     load.read((char *)c1, sizeof(*c1));
     cout<<"Done!"<<endl;
 }
@@ -72,7 +72,7 @@ void load_game(character *c1){
 void save_game(character *c1){
     cout<<"Saving progress....."<<endl;
     sleep(1);
-    ofstream save("gamedata.bin", ios::binary);
+    ofstream save("gamedata.ros", ios::binary);
     save.write((char *)c1, sizeof(*c1));
     cout<<"Done!"<<endl;
 }
