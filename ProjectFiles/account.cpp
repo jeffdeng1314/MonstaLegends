@@ -17,7 +17,7 @@ int account_menu(){
     else if(cin.fail() || !(choice >= 1 && choice <= 4)){
         cout<<"Invalid input"<<endl;
         cin.clear();
-        cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n' );
+        cin.ignore(100,'\n' );
         return 100;
     }
     else{return 100;}

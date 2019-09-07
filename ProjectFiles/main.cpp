@@ -23,6 +23,7 @@ int main(){
         c1.setname(name);
     }
     
+    
     screen_clear();
     cout<<"Hello "<<c1.getname()<<"! Welcome to Monsta Legends!"<<endl;
 
@@ -45,6 +46,7 @@ int main(){
                 break;
             case 3:
                 save_game(&c1);
+
                 break;
             case 4:
                 load_game(&c1);
