@@ -37,12 +37,10 @@ int main(){
                 screen_clear();
                 while(1){
                     int choice = account_menu();
-                    if(!user_account(choice,c1)){
+                    if(!user_account(choice, &c1)){
                         screen_clear();
                         break;
-
                     }
-
                 }
                 break;
             case 3:

@@ -2,6 +2,8 @@
 #include "../HeaderFiles/allHeaders.h"
 
 int account_menu(){
+    // cin.clear();
+    // cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n' );
     int choice;
     print_headline("Account");
     cout<<"[1] Character Information"<<endl;
@@ -23,7 +25,7 @@ int account_menu(){
 
 
 
-bool user_account(int choice, character c1){
+bool user_account(int choice, character *c1){
     switch(choice){
         case 1:
             character_info(c1);
@@ -45,11 +47,11 @@ bool user_account(int choice, character c1){
 
 
 
-void character_info(character c1){
+void character_info(character *c1){
     print_headline("Character Information");
-    cout<<"Name: "<<c1.getname()<<endl;
-    cout<<"Age: "<<c1.getage()<<endl;
-    cout<<"Gender: "<<c1.getgender()<<endl;
-    cout<<"Money: $"<<c1.getmoney()<<endl;
+    cout<<"Name: "<<c1->getname()<<endl;
+    cout<<"Age: "<<c1->getage()<<endl;
+    cout<<"Gender: "<<c1->getgender()<<endl;
+    cout<<"Money: $"<<c1->getmoney()<<endl;
     cout<<endl;
 }

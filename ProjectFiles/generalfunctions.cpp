@@ -52,7 +52,7 @@ void print_headline(string x){
     cout<<"----------"<<x<<"----------"<<endl;
 }
 
-//Binary Serialization
+//Binary Deserialization
 void load_game(character *c1){
         //Check if the game data file exist for loading saved progress.
     if (FILE *file = fopen("gamedata.bin", "r")) {
